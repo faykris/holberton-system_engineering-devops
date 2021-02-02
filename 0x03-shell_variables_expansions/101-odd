@@ -1,0 +1,2 @@
+#!/bin/bash
+cat --number | cut -c6- | grep --perl-regexp "^[13579]" | cut -f2
