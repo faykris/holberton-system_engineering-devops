@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times with "Hi" at 9th
+x=1
+text="Holberton School"
+hi="Hi"
+while [ $x -le 10 ]
+do
+	echo "$text"
+	if [ $x -eq 9 ]
+	then
+		echo "$hi"
+	fi
+	x=$((x + 1))
+done

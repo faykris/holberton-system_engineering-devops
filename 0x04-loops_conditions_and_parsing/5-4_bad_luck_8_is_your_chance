@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times with bad and good luck
+x=1
+text="Holberton School"
+bl="bad luck"
+gl="good luck"
+while [ $x -le 10 ]
+do
+	if [ $x -eq 4 ]
+	then
+		echo "$bl"
+	elif [ $x -eq 8 ]
+	then
+		echo "$gl"
+	else
+		echo "$text"
+	fi
+	x=$((x + 1))
+done

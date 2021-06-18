@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script is displaying numbers from 1 to 20 and back luck in countries
+x=1
+blc="bad luck from China"
+blj="bad luck from Japan"
+bli="bad luck from Italy"
+while [ $x -le 20 ]
+do
+	echo "$x"
+	case $x in
+		4)
+			echo "$blc"
+			;;
+		9)
+			echo "$blj"
+			;;
+		17)
+			echo "$bli"
+			;;
+	esac
+	x=$((x + 1))
+done
