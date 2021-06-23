@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script is displays the content of /etc/passwd with IFS
+IFS=":"
+while read -r USERNAME PASSWORD USERID GROUPID UIDINFO HOMEDIR COMMAND
+do	
+	printf "The user %s is part of the %s gang, " "$USERNAME" "$GROUPID"
+	printf "lives in %s and rides %s. " "$HOMEDIR" "$COMMAND"
+	printf "%s's place is protected by the passcode %s, " "$USERID" "$PASSWORD"
+	printf "more info about the user here: %s\n" "$UIDINFO"
+
+done < /etc/passwd
