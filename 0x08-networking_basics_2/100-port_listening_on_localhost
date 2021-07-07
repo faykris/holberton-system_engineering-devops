@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# 2. Port listening on localhost - listens on port 98 on localhost
+nc -lk 98
