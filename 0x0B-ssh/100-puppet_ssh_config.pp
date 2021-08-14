@@ -1,8 +1,5 @@
-file_line { 'Pass_Auth_no':
-  path => '/etc/ssh/ssh_config',
-  line => '    PasswordAuthentication no',
-}
-file_line { 'Iden_File_Holberton':
-  path => '/etc/ssh/ssh_config',
-  line => '    IdentityFile ~/.ssh/holberton',
+# 4. Client configuration file (w/ Puppet)
+# change configuration file - connect without using a password
+exec { 'echo "    PasswordAuthentication no\n    IdentityFile ~/.ssh/holberton" >> /etc/ssh/ssh_config':
+  path    => ['/usr/bin', '/usr/sbin', '/bin/bash'],
 }
