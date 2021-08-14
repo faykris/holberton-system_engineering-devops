@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# configuration in /etc/ssh/ssh_config with privated key and password no
+PasswordAuthentication no
+IdentityFile ~/.ssh/holberton
