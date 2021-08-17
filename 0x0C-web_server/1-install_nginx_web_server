@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # script that configures a new Ubuntu machine to respect requirements
-apt-get install nginx
-# sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+# apt-get install nginx
+sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
 echo 'Holberton School' > index.html
 mv index.html /var/www/html/
