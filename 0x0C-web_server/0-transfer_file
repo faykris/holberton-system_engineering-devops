@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Bash script that transfers a file from our client to a server
+PATHF=$1
+IPSER=$2
+USERN=$3
+PATHS=$4
+if (( USERN ))
+then
+	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+fi
+scp -i "$PATHS" -o StrictHostKeyChecking=no "$PATHF" "$USERN"@"$IPSER":~/   
+# scp -i ~/.ssh/holberton -o StrictHostKeyChecking=no index.html ubuntu@34.138.47.45:~/
