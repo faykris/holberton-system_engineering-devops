@@ -3,4 +3,5 @@
 sudo apt-get -y install nginx
 sudp ufw allow 'Nginx HTTP'
 echo 'Holberton School' > index.html
-mv index.html /var/www/html/
+sudo mv index.html /var/www/html/
+sudo service nginx start
