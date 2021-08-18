@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# aaaaaaa
+sed -e s/"string_to_replace"/"${new_string}"/g $file
