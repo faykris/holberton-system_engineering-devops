@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-echo 'Hello Holberton' > /var/lib/docker/volumes/apache-data/_data/index.html
+# command to fix curl: (52) Empty reply from server
+sudo service service apache2 start
