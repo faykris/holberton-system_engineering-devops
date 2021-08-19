@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
 # Configure your Nginx server to have a custom 404 page
-./3-redirection
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo 'Holberton School' > index.html
+sudo mv index.html /var/www/html/
+sudo service nginx start
+sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo service nginx restart
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
