@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# bbbbbbbb
-Ceci n'est pas une page
+# Configure your Nginx server to have a custom 404 page
+./3-redirection
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
