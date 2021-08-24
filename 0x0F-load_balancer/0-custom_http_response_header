@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo 'Holberton School' > index.html
+sudo mv index.html /var/www/html/
+sudo service nginx start
+sed -i "46 a 		add_header X-Served-By $HOSTNAME always;" /etc/nginx/sites-available/default
+service nginx restart 
