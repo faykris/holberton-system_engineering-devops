@@ -5,5 +5,5 @@ sudo ufw allow 'Nginx HTTP'
 echo 'Holberton School' > index.html
 sudo mv index.html /var/www/html/
 sudo service nginx start
-sed -i "46 a 		add_header X-Served-By $HOSTNAME always;" /etc/nginx/sites-available/default
-service nginx restart 
+sudo sed -i "46 a 		add_header X-Served-By $HOSTNAME always;" /etc/nginx/sites-available/default
+sudo service nginx restart 
