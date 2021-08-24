@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# 1. Install your load balancer
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+ADJUSTMENT="
+frontend 18.204.231.151
+    bind 0:80
+    default_backend backend_cluster
+backend backend_cluster
+    balance roundrobin
+    server web-0 34.138.47.45:80
+    server web-1 35.237.57.6:80"
+echo "$ADJUSTMENT" >> /etc/haproxy/haproxy.cfg
+sudo /etc/init.d/haproxy restart
