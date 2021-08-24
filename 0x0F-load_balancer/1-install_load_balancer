@@ -3,7 +3,7 @@
 sudo apt-get -y update
 sudo apt-get -y install haproxy
 ADJUSTMENT="
-frontend 18.204.231.151
+frontend 34.75.170.48
     bind 0:80
     default_backend backend_cluster
 backend backend_cluster
