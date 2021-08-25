@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # Fix issue - change port 8080 to 80
 sudo sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
+service nginx start
 sudo kill -9  "$(pgrep -a nginx | grep master | cut -d ' ' -f 1)"
