@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# World Wide Web - shows domain information
+function print_info(){	
+	dig "$2.$1" | grep -A1 'ANSWER SECTION:' | grep -v 'ANSWER SECTION:' | awk -v SUB="$2" '{printf "The subdomain %s is a %s record and points to %s\n", SUB, $4, $5}'
+}
+
+DOMAIN=$1
+SUBDOMAIN=$2
+if (( $# >= 1 ))
+then
+	if (( $# >= 2 ))
+	then
+		print_info "$DOMAIN" "$SUBDOMAIN"
+	else
+		print_info "$DOMAIN" www
+		print_info "$DOMAIN" lb-01
+		print_info "$DOMAIN" web-01
+		print_info "$DOMAIN" web-02
+	fi
+fi
