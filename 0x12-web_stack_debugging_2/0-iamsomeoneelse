@@ -1,0 +1,8 @@
+#!/usr/bin/env bash                                                                                                               
+# 0. Run software as another user                                                                                                 
+if (( $# < 1))                                                                                                                    
+then                                                                                                                              
+        whoami                                                                                                                    
+else                                                                                                                              
+        su - "$1" -c whoami                                                                                                         
+fi
