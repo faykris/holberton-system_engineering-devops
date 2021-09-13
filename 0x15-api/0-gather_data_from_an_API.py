@@ -30,7 +30,8 @@ if __name__ == "__main__":
     user_dict = json.loads(user)
     name = user_dict.get('name')
 
-    print("Employee {} is done with tasks({}/{}):".format(name, completed, total))
+    print("Employee {} is done with tasks({}/{}):".format(
+        name, completed, total))
     for element in data_list:
         if element.get('completed') is True and element.get('userId') ==\
                 int(sys.argv[1]):
