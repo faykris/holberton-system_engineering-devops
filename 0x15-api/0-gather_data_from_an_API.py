@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """0. Gather data from an API - Module"""
+import json
 import sys
 import urllib.request
-import json
+
 
 with urllib.request.urlopen(
         'https://jsonplaceholder.typicode.com/todos') as response:
