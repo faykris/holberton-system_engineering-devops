@@ -15,9 +15,10 @@ total = 0
 name = ''
 
 for element in data_list:
-    if element['completed'] is True and element['userId'] == int(sys.argv[1]):
+    if element.get('completed') is True and element.get('userId') \
+            == int(sys.argv[1]):
         completed += 1
-    if element['userId'] == int(sys.argv[1]):
+    if element.get('userId') == int(sys.argv[1]):
         total += 1
 
 with urllib.request.urlopen(
@@ -26,9 +27,10 @@ with urllib.request.urlopen(
     html2 = response.read()
 user = html2.decode('utf-8')
 user_dict = json.loads(user)
-name = user_dict['name']
+name = user_dict.get('name')
 
 print("Employee {} is done with tasks({}/{}):".format(name, completed, total))
 for element in data_list:
-    if element['completed'] is True and element['userId'] == int(sys.argv[1]):
-        print("\t {}".format(element['title']))
+    if element.get('completed') is True and element.get('userId') ==\
+            int(sys.argv[1]):
+        print("\t {}".format(element.get('title')))
