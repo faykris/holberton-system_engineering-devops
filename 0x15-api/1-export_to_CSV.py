@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     f = open('{}.csv'.format(sys.argv[1]), 'w')
     writer = csv.writer(f, quoting=csv.QUOTE_ALL)
-    
+
     with urllib.request.urlopen(
             'https://jsonplaceholder.typicode.com/users/{}'.format(
                 int(sys.argv[1]))) as response:
