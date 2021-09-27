@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """0. How many subs? - Module"""
-import requests
 
 
 def number_of_subscribers(subreddit):
     """ number_of_subscribers - retrieve aa number of subscribers"""
+    import requests
 
     with requests.get(
             "https://www.reddit.com/r/{}/about.json".format(subreddit)
