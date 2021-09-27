@@ -8,7 +8,8 @@ def number_of_subscribers(subreddit):
 
     with requests.get(
             "https://www.reddit.com/r/{}/about.json".format(subreddit),
-            headers={"User-Agent": "Mozilla/5.0"},
+            headers={"User-Agent": "Mozilla",
+                     "Content-Type": "application/json"},
             allow_redirects=False,
     ) as response:
         if response.status_code > 299:
