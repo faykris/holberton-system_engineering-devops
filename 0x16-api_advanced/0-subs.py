@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 """0. How many subs? - Module"""
-import json
+import requests
+
 
 def number_of_subscribers(subreddit):
-    import urllib
-    with urllib.request.urlopen(
-            ' https://www.reddit.com/dev/api/subreddits/mine/subscriber/') as response:
-        html2 = response.read()
-    user_d = html2.decode('utf-8')
-    user_dict = json.loads(user_d)
-    return user_dict
+    """ number_of_subscribers - retrieve aa number of subscribers"""
+
+    with requests.get(
+            "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    ) as response:
+        if response.status_code > 299:
+            return 0
+    n_subscribers = response.json()
+    return n_subscribers.get("data").get("subscribers")
