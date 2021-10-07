@@ -34,7 +34,8 @@ server {
 	}
 	
 	location / {
-		proxy_pass http://127.0.0.1:5003;
+		alias /home/ubuntu/AirBnB_clone_v4/web_dynamic;
+		proxy_pass http://127.0.0.1:5003/2-hbnb;
 	}
 
 	# SSL configuration
